@@ -1,6 +1,6 @@
 import './App.css';
 import Accounts from './components/Accounts';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import Account from './components/Account';
 import NotFound from './components/NotFound';
 
@@ -11,6 +11,7 @@ function App() {
         <Routes>
           <Route path='/accounts' exact element={<Accounts />} />
           <Route path='/accounts/:id' exact element={<Account />} />
+          <Route path='/' element={<Navigate to={'/accounts'} />} />
           <Route path='*' element={<NotFound />} />
 
         </Routes>
